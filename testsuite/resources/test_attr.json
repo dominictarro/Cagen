@@ -1,0 +1,18 @@
+{
+	"bishop": {
+		"filename": "./tests/bishop.json",
+		"difficulty": "Medium",
+		"size": 25000,
+		"args": "{A1,A2,...,H7,H8},[0,100]",
+		"response-type": "bool",
+		"open": true
+	},
+	"cardinal": {
+		"filename": "./tests/cardinal.json",
+		"difficulty": "Hard",
+		"size": 100000,
+		"args": "{a1,a2,...,z7,z8},[0,100]",
+		"response-type": "bool",
+		"open": true
+	}
+}

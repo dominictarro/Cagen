@@ -1,6 +1,21 @@
 import random
 
 
+def solution(x: int) -> bool:
+	r = x**0.5
+	if r.is_integer():
+		if r <= 3:
+			return r > 1
+		elif (r % 2 == 0) | (r % 3 == 0):
+			return 0
+
+		for i in range(5, int(r**0.5)+1, 2):
+			if r % i == 0:
+				return 0
+		return 1
+	return 0
+
+
 def tPrimeSieveRoot(A: (int, float), B: int) -> list:
 	"""
 	Returns a list of primes in the range [A**0.5, A**0.5]
@@ -65,18 +80,19 @@ def generate(a, b, n):
 		sieve_samp = sieve
 
 	odd_n = int((n - tprime_n)/2)
-
+	sieve_set = set(sieve)
 	if a % 2 == 0:
 		# Start on an odd index
-		odd_samp = [(x**2, 0) for x in set(random.sample(range(aroot+1, broot, 2), odd_n)) - set(sieve)]
+		odd_samp = [(x**2, 0) for x in set(random.sample(range(aroot+1, broot, 2), odd_n)) - sieve_set]
 		even_n = max(n - tprime_n - len(odd_samp), 0)
 		# Start on an even index
 		even_samp = [(x**2, 0) for x in random.sample(range(aroot, broot, 2), even_n)]
 	else:
 		# Start on an odd index
-		odd_samp = [(x**2, 0) for x in set(random.sample(range(aroot, broot, 2), odd_n)) - set(sieve)]
+		odd_samp = [(x**2, 0) for x in set(random.sample(range(aroot, broot, 2), odd_n)) - sieve_set]
 		# Start on an even index
 		even_samp = [(x**2, 0) for x in random.sample(range(aroot+1, broot, 2), n - tprime_n - len(odd_samp))]
+
 
 	# Join
 	cases = []
@@ -93,4 +109,19 @@ def generate(a, b, n):
 	except ValueError:
 		pass
 
+	# Add some mixers
+	for x in range(int(n-n**0.5)):
+		if A+x not in sieve:
+			i = random.randint(0, n-1)
+			cases[i] = (A+x, 0)
+		if abs(B-x) not in sieve:
+			i = random.randint(0, n-1)
+			cases[i] = (B+x, 0)
+
+
+	for i, x in enumerate(cases):
+		arg, answer = x
+		sol = solution(arg)
+		if sol != answer:
+			cases[i] = (arg, sol)
 	return cases
