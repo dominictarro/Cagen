@@ -11,16 +11,16 @@ Developed for the [Tech with Tim Discord](https://discord.gg/PaKYTH) challenges,
 - Fail limit
 - Input/output blocking
 - Rule violation identifiers
-    - Imports
-    - IO
-    - Solution calls
-    - eval, exec, compile methods
+    * Imports
+    * IO
+    * Solution calls
+    * eval, exec, compile methods
 - Missed case history
 - Error tracking
 - Performance metrics
-    - True code length
-    - Runtime and iteration rate precision up to one-thousandth of a second per iteration
-    – Correct / Completed, fraction and percentage
+    * True code length
+    * Runtime and iteration rate precision up to one-thousandth of a second per iteration
+    * Correct / Completed (fraction and percentage)
 
 
 
