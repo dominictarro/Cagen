@@ -1,9 +1,0 @@
-{
-  "FAIL_MAX": 30,
-  "RUNTIME_MAX": 10,
-  "ENDL": "\n",
-  "SPACE": 20,
-  "INTRO": "{color}Welcome to the {header}Tech with Tim{color}, Discord solution-testing repl!{clear}\n",
-  "DUMP": "./results/dump.log",
-  "EXIT": "0"
-}

@@ -147,7 +147,7 @@ def generate(a: (int, float), b: (int, float), n: (int, float), r: float,
 
 
 def gen_range(a: int, b: int, n: int):
-	# Generate a b-a tests for exponents a to b
+	# Generate a b-a cases for exponents a to b
 	for N in range(a, b+1):
 		r = random.uniform(0.33, 0.67)
 		rf = random.uniform(0.33, 0.67)

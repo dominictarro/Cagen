@@ -1,0 +1,8 @@
+{
+  "FAIL_MAX": 30,
+  "RUNTIME_MAX": 10,
+  "ENDL": "\n",
+  "SPACE": 20,
+  "INTRO": "{color}Welcome to the {header}Tech with Tim{color}, Discord challenge tester!{clear}\n",
+  "EXIT": "0"
+}

@@ -1,0 +1,10 @@
+{
+	"easynumber": {
+		"filename": "./cases/easy.json",
+		"difficulty": "Medium",
+		"size": 100000,
+		"args": "[1,10^15]",
+		"response-type": "int",
+		"open": true
+	}
+}
