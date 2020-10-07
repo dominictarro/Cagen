@@ -31,21 +31,21 @@ with open("./resources/default.json", 'r') as infile:
 	INTRO = defaults["INTRO"]
 	EXIT = defaults["EXIT"]
 
-# Read in available cases
+# Read in available tests
 with open("./resources/test_attr.json", 'r') as infile:
 	TEST_ATTR = json.load(infile)
 
 
 # Test response type to ctype
 RESPONSE_CTYPE = {
-	"bool": c_bool,
+	"bool": c_int,
 	"int": c_int,
 	"float": c_float,
 	"str": c_wchar_p
 }
 # Test response type to type
 RESPONSE_DTYPE = {
-	"bool": bool,
+	"bool": int,
 	"int": int,
 	"float": float,
 	"str": str
@@ -70,8 +70,8 @@ def get_test_param_string(t_id: str) -> str:
 	"""
 	Format the test's attributes for terminal output
 
-	:param t_id:    dictionary key for test
-	:return:        formatted string
+	:param t_id:    Dictionary key for test
+	:return:        Formatted string
 	"""
 	difficulty = TEST_ATTR[t_id]["difficulty"]
 	size = TEST_ATTR[t_id]["size"]
@@ -94,8 +94,8 @@ def get_test(t_id: str) -> Union[Tuple[Union[List[Tuple[Any, Any]]], type], None
 	]
 	and the ctype to be used
 
-	:param t_id:    dictionary key for test
-	:return:        test and answer data type, or none type if not a valid test
+	:param t_id:    Dictionary key for test
+	:return:        Test and answer data type, or none type if not a valid test
 	"""
 	try:
 		with open(TEST_ATTR[t_id]["filename"], 'r') as infile:

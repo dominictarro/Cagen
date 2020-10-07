@@ -1,8 +1,11 @@
 # Coding Challenge Unit Tester
 
-Developed for the [Tech with Tim Discord](https://discord.gg/PaKYTH), this program tests a solution function against pre-defined test cases.
+Developed for the [Tech with Tim Discord](https://discord.gg/PaKYTH) challenges, this program tests a solution function against pre-defined test cases.
 
-#### Functionality
+
+## Functionality
+
+<div id="functionality"></div>
 
 - Time limit
 - Fail limit
@@ -22,6 +25,9 @@ Developed for the [Tech with Tim Discord](https://discord.gg/PaKYTH), this progr
 
 
 ## User Instructions
+
+<div id="user_inst"></div>
+
 1. Open the file `solution.py` and replace the placeholder solution with your solution.
     - Make sure your function is called `solution`
 2. Go to `main.py` and run the program.
@@ -30,6 +36,9 @@ Developed for the [Tech with Tim Discord](https://discord.gg/PaKYTH), this progr
 5. If any, save missed cases (optional)
 
 ## Admin Instructions
+
+<div id="admin_inst"></div>
+
 The cases ought to be stored in a json file, formatted as follows:
 
     [
@@ -90,4 +99,12 @@ __INTRO__
 _Pre-formatted introductory text upon running the program_<br>
 
 *_Will still return results after shutting down test_
+
+
+## Results
+
+<div id="results"></div>
+
+__Why do some of my responses show -1, -1.0, or "-1"?__<br>
+- This occurs when there was an error in your solution, or the data type of your response does not match the data type of the answer. Check `/results/errors.json` for the exception raised.
 
