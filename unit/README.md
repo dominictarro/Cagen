@@ -28,7 +28,7 @@ Developed for the [Tech with Tim Discord](https://discord.gg/PaKYTH) challenges,
 
 <div id="user_inst"></div>
 
-1. Open the file `solution.py` and replace the placeholder solution with your solution.
+1. Open the file `solution.py` and substitute the placeholder solution with your own.
     - Make sure your function is called `solution`
 2. Go to `main.py` and run the program.
 3. Enter the test id you would like to test your algorithm against
@@ -41,16 +41,19 @@ Developed for the [Tech with Tim Discord](https://discord.gg/PaKYTH) challenges,
 
 The cases ought to be stored in a json file, formatted as follows:
 
+```json
     [
         [[arguments], answer],
         [[arguments], answer],
         ...
     ]
+```
 
 Note that the arguments must be a nested list, even if there is only one.
 
 `test_attr.json` contains information about the tests
 
+```json
     {
         "test id": {
             "filename": "./tests/test.json",
@@ -61,9 +64,10 @@ Note that the arguments must be a nested list, even if there is only one.
             "open": true
         }
     }
+```
 
 __test id__
-_id the user will input to select test (string)_
+_id the user will input to select a test (string)_<br>
 __filename__
 _relative path to file (string)_<br>
 __difficulty__ 
