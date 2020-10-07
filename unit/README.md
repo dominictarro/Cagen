@@ -41,7 +41,7 @@ Developed for the [Tech with Tim Discord](https://discord.gg/PaKYTH) challenges,
 
 The cases ought to be stored in a json file, formatted as follows:
 
-```json
+```
     [
         [[arguments], answer],
         [[arguments], answer],
