@@ -24,15 +24,16 @@ def test(cases: list, results: Results, timer: Timer, dtype: type):
 				# Clock solution runtime
 				with timer.clock():
 					response = solution(*args)
+
 				if dtype(response) != dtype(answer):
 					try:
-						results.add_fail(i=i, response=None)
+						results.add_fail(i=i, response=response)
 					except Exception as e:
 						logging.warning(e)
 			except Exception as e:
 				# If any error during solution or response check, include it into results for user's review
 				results.add_error(i=i, error=e)
-				results.add_fail(i=i, response=None)
+				results.add_fail(i=i, response=response)
 
 			# Break upon overcoming the fail limit
 			if results.fail_count.value >= FAIL_MAX:
