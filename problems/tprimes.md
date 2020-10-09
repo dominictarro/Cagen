@@ -18,4 +18,4 @@ integer. From there, we know all primes are odd so we can skip all evens (except
 
 To check if the root is prime, we can take the modulo of all odd numbers less than the root's square root
 (since numbers greater than its root will have their coproduct already checked). Return false
-if we hit an root%d that equals 0.
+if we hit a root%d that equals 0.
