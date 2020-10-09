@@ -1,13 +1,5 @@
 # T-Primes
 
-<script src="//yihui.org/js/math-code.js"></script>
-
-<!-- Just one possible MathJax CDN below. You may use others. -->
-
-<script async
-  src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
-
 ## Problem
 
 Although Smilecat couldn't submit a valid solution for this weekly challenge, he learned that
@@ -22,10 +14,8 @@ The only number than has only three divisors is the square of a number with only
 a prime. Ergo, we can simplfiy the problem to: is the square root of x a prime?
 
 To implement, we can eliminate most numbers by taking their root and checking if it is an
-integer. From there, we know all primes are odd so we can skip all evens (except 2). With
+integer. From there, we know all primes are odd so we can skip all evens (except 2).
 
-`$r = x^{\frac{1}{2}}$`
-
-To check if r is prime, we can take the modulo of all odd numbers less than r's square root
+To check if the root is prime, we can take the modulo of all odd numbers less than the root's square root
 (since numbers greater than its root will have their coproduct already checked). Return false
-if we hit an r%d that equals 0.
+if we hit an root%d that equals 0.
