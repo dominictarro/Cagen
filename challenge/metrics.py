@@ -12,8 +12,8 @@ from typing import Any
 import time
 
 # Local dependencies
-from unit.utils import get_solution_length, get_violations
-from unit.config import ERROR_TO_ID, ID_TO_ERROR
+from challenge.utils import get_solution_length, get_violations
+from challenge.config import ERROR_TO_ID, ID_TO_ERROR
 
 
 class Timer:

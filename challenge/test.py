@@ -5,10 +5,10 @@ import logging
 import os
 
 # Local dependencies
-from unit.config import FAIL_MAX, RUNTIME_MAX, RESPONSE_CTYPE, RESPONSE_DTYPE
-from unit.metrics import Timer, Results
-from unit.solution import solution
-from unit.utils import io_block
+from challenge.config import FAIL_MAX, RUNTIME_MAX, RESPONSE_CTYPE, RESPONSE_DTYPE
+from challenge.metrics import Timer, Results
+from challenge.solution import solution
+from challenge.utils import io_block
 
 
 logging.basicConfig(filename="./results/failed-eval.log", filemode='w', level=logging.WARNING)

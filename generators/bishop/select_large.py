@@ -4,7 +4,7 @@ import json
 import string
 
 
-from bishop.solution import solution
+from generators.bishop.solution import solution
 
 
 numalpha = {i: char for i, char in enumerate(string.ascii_lowercase)}

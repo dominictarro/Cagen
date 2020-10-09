@@ -3,7 +3,7 @@ import sys
 import os
 
 # Local dependencies
-from unit import config, test, utils
+from challenge import config, test, utils
 
 
 def main():

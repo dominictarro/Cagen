@@ -1,6 +1,4 @@
-import random
-import json
-from tprimes import select
+from generators.tprimes import select
 
 
 def solution(x: int) -> bool:

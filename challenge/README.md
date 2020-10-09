@@ -19,7 +19,7 @@ Developed for the [Tech with Tim Discord](https://discord.gg/PaKYTH) challenges,
 - Error tracking
 - Performance metrics
     * True code length
-    * Runtime and iteration rate precision up to one-thousandth of a second per iteration
+    * Runtime and iteration rate precision at nanosecond granularity
     * Correct / Completed (fraction and percentage)
 
 

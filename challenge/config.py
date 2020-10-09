@@ -9,7 +9,7 @@ from typing import Any, List, Union, Tuple
 import json
 
 # Local dependencies
-from unit.utils import Colors
+from challenge.utils import Colors
 
 
 # Read in default settings

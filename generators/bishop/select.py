@@ -1,7 +1,7 @@
 from itertools import product
 import random
 import json
-from bishop.solution import solution
+from generators.bishop.solution import solution
 
 
 numalpha = {
