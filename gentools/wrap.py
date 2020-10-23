@@ -2,17 +2,25 @@ from typing import Callable, Union, List
 import random
 
 
-def __kwarg_generator(**kwargiters):
+def __has_next(generator: iter):
+	try:
+		return generator.__next__()
+	except StopIteration:
+		return False
+
+
+def __kwarg_generator(**kwargs):
 	"""
+	Keyword argument generator that can handle lists/generators of varying lengths.
 
 	:param kwargiters: Keyword arguments for iterables that should be zipped together for passing into a function,
 						index by index
 	:return:
 	"""
-
-	for kwargs in zip(*([kwargiters[key] for key in kwargiters])):
+	kwargs = {key: iter(kwargs[key]) for key in kwargs}
+	while True:
 		yield {
-			keyword: val for keyword, val in zip([*kwargiters], kwargs)
+			key: x for key in kwargs if (x := __has_next(kwargs[key]))
 		}
 
 
@@ -87,4 +95,3 @@ def binning(m: Union[int, float], M: Union[int, float], n: int, k: int = 1, **kw
 
 		return wrapper
 	return wrap
-
