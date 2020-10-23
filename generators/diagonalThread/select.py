@@ -1,11 +1,6 @@
+from .solution import solution
 import random
 import json
-
-
-def solution(n,m):
-	t=n+m-2
-	while m:n,m=m,n%m
-	return t+n
 
 
 def generator(a, b, n) -> list:

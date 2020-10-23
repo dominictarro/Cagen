@@ -1,15 +1,10 @@
+from .solution import solution
 from gentools.wrap import binning
 import random
 import json
 
 
-def solution(n, m):
-	t = n+m-2
-	while m: n, m = m, n % m
-	return t + n
-
-
-@binning(m=0, M=18, n=100000, k=4)
+@binning(m=0, M=18.9648976075, n=100000, k=4)
 def generator(a, b, n) -> list:
 	rng = range(int(a), int(b)+1)
 
@@ -32,5 +27,5 @@ def generator(a, b, n) -> list:
 
 metasample = generator()
 
-with open("diagonal-3-balance.json", 'w') as f:
-	json.dump(metasample, f)
+print(x:=max(max([x[0] for x in metasample])))
+print(len(str(x)))

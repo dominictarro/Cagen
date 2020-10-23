@@ -1,5 +1,6 @@
 # Cagen
-Case generators and a solution-testing program for __Tech with Tim__'s weekly challenge on [Discord](https://discord.gg/PaKYTH).
+Case generators, case generation tools, and a solution-testing program for __Tech with Tim__'s weekly challenge on
+[Discord](https://discord.gg/PaKYTH).
 
 ## Challenge
 The abstract testing unit for any challenge.<br>
@@ -103,3 +104,37 @@ Generating sample 5
 	Bias: 0
 ```
 Note the shift to the default when the iterable arguments have no more values to supply.
+
+Like any other keyword argument, you can also package the iterables in a dictionary
+```python
+from gentools.wrap import binning
+import random
+
+# Random seeds for each bin's generation
+seeds = [101, 392, 81]
+# Shift random values
+bias_map = [random.randint(-5, 6) for _ in range(4)]
+
+
+# Text to print for each bin
+def printable():
+	i = 0
+	while True:
+		yield f"Generating sample {i}"
+		i += 1
+
+kwarg_dict = {'seed': seeds, 'bias': bias_map, 'stdout': printable()}
+
+@binning(m=0, M=10, n=10000, k=5, **kwarg_dict)
+# Generate 5 sub-samples in the range 10^0 to
+# 10^10 and merge them so they sum to 1000
+def generator(a, b, n, seed=1, bias=0, stdout="..."):
+	random.seed(seed)
+	print(stdout)
+	print(f"\tSeed: {seed}")
+	print(f"\tBias: {bias}")
+	return [([x+bias], (x + bias) % 2 == 0) for x in random.choices(range(int(a), int(b)), k=n)]
+
+
+cases = generator()
+```
