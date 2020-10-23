@@ -112,3 +112,5 @@ _Pre-formatted introductory text upon running the program_<br>
 __Why do some of my responses show -1, -1.0, or "-1"?__<br>
 - This occurs when there was an error in your solution, or the data type of your response does not match the data type of the answer. Check `/results/errors.json` for the exception raised.
 
+__Why is the '**Rate**' in the results output different from the progress bar's rate?__<br>
+- The computed rate only incorporates the runtime of the algorithm while the `TQDM` progress bar also includes the time from response validation, failed case tracking, and error handling—none of which are relevant to your algorithm's performance.
