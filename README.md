@@ -45,7 +45,7 @@ import random
 
 # Generate 5 sub-samples in the range 10^0 to
 # 10^10 and merge them so they sum to 1000 cases
-@binning(m=0, M=10, n=100000, k=10)
+@binning(m=0, M=10, n=100000, bins=10)
 def generator(a, b, n):
     return random.choices(range(int(a), int(b)), k=n)
 
@@ -72,7 +72,7 @@ def printable():
 		i += 1
 
 
-@binning(m=0, M=10, n=10000, k=5, seed=seeds, stdout=printable(), bias=bias_map)
+@binning(m=0, M=10, n=10000, bins=5, seed=seeds, stdout=printable(), bias=bias_map)
 # Generate 5 sub-samples in the range 10^0 to
 # 10^10 and merge them so they sum to 1000
 def generator(a, b, n, seed=1, bias=0, stdout="..."):
@@ -125,7 +125,7 @@ def printable():
 
 kwarg_dict = {'seed': seeds, 'bias': bias_map, 'stdout': printable()}
 
-@binning(m=0, M=10, n=10000, k=5, **kwarg_dict)
+@binning(m=0, M=10, n=10000, bins=5, **kwarg_dict)
 # Generate 5 sub-samples in the range 10^0 to
 # 10^10 and merge them so they sum to 1000
 def generator(a, b, n, seed=1, bias=0, stdout="..."):

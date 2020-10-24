@@ -4,7 +4,7 @@ import random
 import json
 
 
-@binning(m=0, M=18.9648976075, n=100000, k=4)
+@binning(m=0, M=18.9648976075, n=100000, bins=4)
 def generator(a, b, n) -> list:
 	rng = range(int(a), int(b)+1)
 

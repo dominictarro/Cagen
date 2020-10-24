@@ -37,7 +37,7 @@ def __bin_generator(low: Union[int, float], high: Union[int, float], leap: Union
 		yield 10**(leap*abs(i)), 10**(leap*abs(i+1)), subn
 
 
-def binning(m: Union[int, float], M: Union[int, float], n: int, k: int = 1, **kwargiters):
+def binning(m: Union[int, float], M: Union[int, float], n: int, bins: int = 1, **kwargiters):
 	"""
 	Runs case generator using a binning strategy to more evenly distribute randomly sampled values within the range
 	[10^m, 10^M).
@@ -50,22 +50,22 @@ def binning(m: Union[int, float], M: Union[int, float], n: int, k: int = 1, **kw
 	:param m: The lower exponent bound for 10^x
 	:param M: The upper exponent bound for 10^x
 	:param n: The number of cases to be generated
-	:param k: The number of bins (sub samples) to use when generating
+	:param bins: The number of bins (sub samples) to use when generating
 	:param negatives: Whether generated values can be negative
 
 	:param kwargiters: If your generator allows custom parameters for each sample, pass a list, generator, or tuple
 					keyword arguments
 	:return: wrapper function
 	"""
-	if not isinstance(k, int):
-		raise TypeError(f"Argument k must be an integer argument: {k} given")
+	if not isinstance(bins, int):
+		raise TypeError(f"Argument k must be an integer argument: {bins} given")
 	elif not isinstance(m, (int, float)) or not isinstance(M, (int, float)):
 		raise TypeError(f"Exponent bounds must be real numbers: m={m} and M={M} given")
 
 
 	# Create a generator from the negative max to the positive max
-	leap = (M-m)/k
-	bins_gen = __bin_generator(0, k, leap=leap, subn=n//k)
+	leap = (M-m) / bins
+	bins_gen = __bin_generator(0, bins, leap=leap, subn=n // bins)
 
 	# Turn custom bin lists into iterable
 	kwarg_iterator = __kwarg_generator(**kwargiters)
